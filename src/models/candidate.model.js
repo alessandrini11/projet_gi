@@ -42,7 +42,8 @@ const candidateSchema = mongoose.Schema(
         timestamps: true
     }
 )
-
+candidateSchema.plugin(toJSON);
+candidateSchema.plugin(paginate);
 const Candidate = mongoose.model('Candidate', candidateSchema)
 
 module.exports = Candidate
